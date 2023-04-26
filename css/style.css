@@ -1557,7 +1557,10 @@ body.mobile-nav-active #mobile-nav-toggle {
     padding-right: 60px;
   }
 }
-
+.rtl{
+  padding-left: 10px;
+  text-align: right;
+}
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
