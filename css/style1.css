@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400);
+.mastercard, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #1d1d1b;
+  font-family: "Poppins", sans-serif;
+  color: #f5f2ed;
+  letter-spacing: 0.1em;
+}
+
+.mastercard {
+  transform: translateX(60px);
+  animation: mastercard 1.5s 1.666s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+
+.mastercard__part {
+  will-change: transform;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.mastercard__part.red {
+  background-color: #e40019;
+  transform: translateX(12.5px);
+  animation: red 1s 1s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+.mastercard__part.orange {
+  background-color: #f6a749;
+  transform: translateX(-12.5px);
+  mix-blend-mode: color-dodge;
+  animation: orange 1s 1s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+
+.mastercard__copy {
+  overflow: hidden;
+  padding-left: 0.2em;
+}
+.mastercard__copy span {
+  display: inline-block;
+  transform: translateX(-100%);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: copy 1.5s 1.666s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+
+.mastercard,
+.mastercard__part.red,
+.mastercard__part.orange,
+.mastercard__copy span {
+  animation-fill-mode: forwards;
+}
+
+@keyframes red {
+  to {
+    transform: translate(4.1666666667px);
+  }
+}
+@keyframes orange {
+  to {
+    transform: translate(-4.1666666667px);
+  }
+}
+@keyframes mastercard {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes copy {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
